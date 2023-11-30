@@ -1,3 +1,6 @@
 h1{
-    text-align: center; text-decoration: underline; font-family: Arial
+    text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; text-decoration: underline;
+}
+.underlined {
+    text-decoration: underline;
 }
