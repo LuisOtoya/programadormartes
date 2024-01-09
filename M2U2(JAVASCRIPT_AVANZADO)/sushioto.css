@@ -13,14 +13,12 @@ li {
 .contenedor img {
     margin: auto; 
 }
-.contenedor0 
-{
-  display: flex;justify-content: space-between;
-  }
 .left {
-  align-self:flex-end
-  
+align-self:flex-end
 }
 .right {
-  align-self:flex-start
+align-self:flex-start
+}
+h4 {
+    background-color: blue;
 }
