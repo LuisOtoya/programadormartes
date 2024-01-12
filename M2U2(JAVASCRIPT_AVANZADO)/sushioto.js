@@ -4,3 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 h1Element.style.color = 'green';
             });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            const divElement = document.querySelector('div.horarios');
+            divElement.addEventListener('click', function() {
+                divElement.style.color = 'green';
+            });
+        });
