@@ -1,5 +1,9 @@
 body{
-    background-color: coral;
+    background-image: url("/M2U2(JAVASCRIPT_AVANZADO)/img/Sushi-3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 .horarios {
     color:white;
@@ -7,7 +11,7 @@ body{
     justify-content: space-between;
 }
 .titulo{
-    background-color: black;  color:red; text-align: center;}
+    color:red; text-align: center;}
 .titulo2{
     display: flex;
     justify-content: center;
@@ -15,10 +19,5 @@ body{
 }
     
 li {
-    color: black;font-family: fantasy; font-size: 30px;
-}
-
-img {
-    width: 500px;
-    height: 300px;
+    color:#fff ;font-family: fantasy; font-size: 30px;
 }
