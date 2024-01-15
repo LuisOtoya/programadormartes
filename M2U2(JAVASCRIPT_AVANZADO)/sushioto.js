@@ -16,11 +16,7 @@
                 divElement.style.color = '#708090';
             });
         })
-        const textarea = document.getElementById("textarea");
-        const charCount =document.getElementById("charCount");
-        textarea.addEventListener; 
-         function(){
-            const text = textarea.Value;
-            const remainingChars = 100 - text.length;
-            charCount.textContent = remainingChars;
-        })
+        function countCharacters(textarea) {
+        var charCount = document.getElementById("charCount");
+        charCount.textContent = textarea.value.length;
+    }
