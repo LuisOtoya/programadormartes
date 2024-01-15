@@ -16,3 +16,9 @@ body{
 .listas {
     color:#fff ;font-family: fantasy; font-size: 30px;
 }
+#textarea{
+    display: flex; justify-content:center;
+    font-size: 30px;
+    color: aqua;
+    
+}
