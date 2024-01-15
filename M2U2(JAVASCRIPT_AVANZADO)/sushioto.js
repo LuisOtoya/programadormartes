@@ -17,6 +17,6 @@
             });
         })
         function countCharacters(textarea) {
-        var charCount = document.getElementById("charCount");
+        const charCount = document.getElementById("contador");
         charCount.textContent = textarea.value.length;
     }
