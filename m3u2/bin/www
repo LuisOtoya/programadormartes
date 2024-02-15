@@ -17,7 +17,7 @@ app.set('port', port);
 
 /**
  * Create HTTP server.
- */C:\Users\luiso\Desktop\programador web_martes\m3u2
+ */
 
 var server = http.createServer(app);
 
