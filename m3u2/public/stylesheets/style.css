@@ -1,8 +1,56 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
-
-a {
-  color: #00B7FF;
+h1 {
+  color: red;font-size: 75px;font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center;
+}
+.horarios {
+  display: flex; justify-content: space-between; color: white;font-size: 20px;font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.bienvenido{
+  color: white;text-align: center;font-size: 25px;
+}
+li {
+  display: flex;justify-content: space-around;font-size: 25px; color: blueviolet;
+}
+form{
+border: 1px solid;color:aqua;
+}
+label {
+  color: brown;font-size: 25px;
+}
+footer{
+  color: cadetblue;font-size: 20px;text-align: center;
+}
+.widget_blog_subscription {
+  display: block;
+  margin: 50px auto;
+  width: 60%;
+  max-width: 490px;
+  min-width: 320px;
+  position: relative;
+  overflow: hidden;
+  background-color: #F6F6F2;
+  border-radius: 5px;
+  padding: 50px;
+  background-color: #fff;
+  background-size: 100% 1em;
+  background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 79px, #abced4 79px, #abced4 81px, rgba(0, 0, 0, 0.03) 81px),
+                  -webkit-linear-gradient(#eee .05em, transparent .05em);
+  background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 79px, #abced4 79px, #abced4 81px, rgba(0, 0, 0, 0.03) 81px),
+                  -moz-linear-gradient(#eee .05em, transparent .05em);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 79px, #83B3DB 79px, #83B3DB 81px, rgba(0, 0, 0, 0.03) 81px),
+                  linear-gradient(#eee .05em, transparent .05em);
+}
+.widget_blog_subscription p {
+  margin: 0;
+  text-align: center;
+}
+.widget_blog_subscription p:first-child {
+  margin: 0 0 30px;
+  color: #83B3DB;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
