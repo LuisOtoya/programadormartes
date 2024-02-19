@@ -4,8 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index'); // routes/index.js
 var usersRouter = require('./routes/users');
+var promosRouter = require('./routes/promos'); //routes/promos.js
+var cartasRouter = require('./routes/carta'); //routes/carta.js
+var nuestroespacioRouter = require('./routes/nuestroespacio'); //routes/nuestroespacio.js
+var direccionRouter = require('./routes/direccion'); //routes/direccion.js
+var redessocialesRouter = require('./routes/redessociales'); //routes/redessociales.js
+var deliveryRouter = require('./routes/delivery'); //routes/delivery.js
+var ingresarRouter = require('./routes/ingresar'); //routes/ingresar.js
 
 var app = express();
 
@@ -21,6 +28,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/promos', promosRouter);
+app.use('/carta', cartasRouter);
+app.use('/nuestroespacio', nuestroespacioRouter);
+app.use('/direccion', direccionRouter);
+app.use('/redessociales', redessocialesRouter);
+app.use('/delivery', deliveryRouter);
+app.use('/ingresar', ingresarRouter);
 
 app.get('/prueba', function(req,res){
   res.send('hola soy la pagina de prueba')
