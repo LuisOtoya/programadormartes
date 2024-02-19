@@ -6,4 +6,5 @@ router.get('/', function(req, res, next) {
   res.send('hola esta es la pagina de ingresar');
 });
 
+
 module.exports = router;
