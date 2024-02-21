@@ -12,7 +12,8 @@ var nuestroespacioRouter = require('./routes/nuestroespacio'); //routes/nuestroe
 var direccionRouter = require('./routes/direccion'); //routes/direccion.js
 var redessocialesRouter = require('./routes/redessociales'); //routes/redessociales.js
 var deliveryRouter = require('./routes/delivery'); //routes/delivery.js
-var ingresarRouter = require('./routes/ingresar'); //routes/ingresar.js
+
+var contactanosRouter = require('./routes/contactanos'); //routes/contactanos.js
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/direccion', direccionRouter);
 app.use('/redessociales', redessocialesRouter);
 app.use('/delivery', deliveryRouter);
 app.use('/ingresar', ingresarRouter);
+app.use('/contactanos', contactanosRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
