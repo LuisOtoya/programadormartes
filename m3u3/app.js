@@ -12,13 +12,14 @@ var nuestroespacioRouter = require('./routes/nuestroespacio'); //routes/nuestroe
 var direccionRouter = require('./routes/direccion'); //routes/direccion.js
 var redessocialesRouter = require('./routes/redessociales'); //routes/redessociales.js
 var deliveryRouter = require('./routes/delivery'); //routes/delivery.js
+var ingresarRouter = require('./routes/ingresar'); //routes/ingresar.js
 var contactanosRouter = require('./routes/contactanos'); //routes/contactanos.js
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'hbs', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -36,6 +37,7 @@ app.use('/redessociales', redessocialesRouter);
 app.use('/delivery', deliveryRouter);
 app.use('/ingresar', ingresarRouter);
 app.use('/contactanos', contactanosRouter);
+app.use('/', require('./routes/formularioRoutes'));
 
 app.use(function(req, res, next) {
   next(createError(404));
@@ -50,6 +52,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(300,() => {
+  console.log('servicio iniciado en puerto 3000')
 });
 
 module.exports = app;

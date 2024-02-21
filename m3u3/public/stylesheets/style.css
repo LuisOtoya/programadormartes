@@ -5,10 +5,5 @@ body {
   background-attachment: fixed;
 }
 p {
-  text-align: center;color: white;
-}
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  text-align: center;color: #FF5733;
 }
