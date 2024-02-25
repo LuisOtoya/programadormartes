@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+router.get('/', (req, res) => {
+res.render('contacto')
+})
+
 router.post('/', async(req, res, next) => {
     var nombre = req.body.nombre;
     var email = req.body.email;
