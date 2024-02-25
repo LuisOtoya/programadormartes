@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var exphbs = require('express-handlebars');
 
 require('dotenv').config();
 
@@ -18,10 +19,13 @@ var ingresarRouter = require('./routes/ingresar'); //routes/ingresar.js
 var contactoRouter = require('./routes/contacto'); //routes/contacto.js
 
 var app = express();
+var hbs = exphbs.create({
+  defaultLayout:'main'
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'hbs',exphbs);
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -1,6 +1,7 @@
-var nodemailer = require("nodemailer");
+var express = require('express');
+var router = express.Router();
 
-router.post('/contacto', async(req, res, next) => {
+router.post('/', async(req, res, next) => {
     var nombre = req.body.nombre;
     var email = req.body.email;
     var tel = req.body.tel;
@@ -11,7 +12,8 @@ router.post('/contacto', async(req, res, next) => {
         subject: 'CONTACTO WEB',
         html: nombre + " se contacto a través de la web y quiere más información a este correo : " + email + ". <br> Además, hizo este comentario : " + mensaje + ". <br> Su tel es: " + tel 
     }
-    var transport = nodemailer.createTransport({
+    
+    var transport = createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
         auth: {
@@ -27,3 +29,4 @@ router.post('/contacto', async(req, res, next) => {
     });
 });
 
+module.exports = router;
