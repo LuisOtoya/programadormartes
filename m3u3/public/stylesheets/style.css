@@ -1,8 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/salon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-
-a {
-  color: #00B7FF;
+p {
+  text-align: center;color: white;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
