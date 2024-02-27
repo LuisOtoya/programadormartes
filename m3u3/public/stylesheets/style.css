@@ -7,11 +7,3 @@ body {
 p {
   text-align: center;color: white;
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.formulario { border: 1px solid green; margin: 100px; 
-}
