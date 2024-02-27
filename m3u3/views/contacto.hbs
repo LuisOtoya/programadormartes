@@ -1,13 +1,13 @@
 <div  class="col-md-4 mt-4 mt-sm-0 p-5 m-5" style="color:white;">
     <h2>Contactanos</h2>
-    <form class="row g-3" action="/" method="post" >
+    <form class="row g-3" action="/contacto" method="post" >
         <div class="col-md-6">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre">
+            <input type="text" class="form-control" id="nombre" name="nombre">
         </div>
         <div class="col-md-6">
             <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido">
+            <input type="text" class="form-control" id="apellido" name="apellido">
         </div>
         <div class="col-12">
             <label for="email" class="form-label">Email</label>
@@ -27,4 +27,5 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>
+    {{message}}
 </div>

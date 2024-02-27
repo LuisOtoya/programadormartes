@@ -25,7 +25,7 @@ var hbs = exphbs.create({
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs','exphbs');
+app.set('view engine', 'hbs',);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -44,7 +44,7 @@ app.use('/delivery', deliveryRouter);
 app.use('/ingresar', ingresarRouter);
 app.use('/contacto', contactoRouter);
 
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   next(createError(404));
 });
 
