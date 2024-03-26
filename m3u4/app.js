@@ -1,12 +1,16 @@
-var createError = require('http-errors');
+require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var exphbs = require('express-handlebars');
-var session =require('express-session')
+var session =require('express-session');
 
-require('dotenv').config();
+var pool = require('./models/bd');
+
+
+
 
 var indexRouter = require('./routes/index'); // routes/index.js
 var usersRouter = require('./routes/users');
@@ -18,6 +22,7 @@ var redessocialesRouter = require('./routes/redessociales'); //routes/redessocia
 var deliveryRouter = require('./routes/delivery'); //routes/delivery.js
 var ingresarRouter = require('./routes/ingresar'); //routes/ingresar.js
 var contactoRouter = require('./routes/contacto'); //routes/contacto.js
+
 
 var app = express();
 var hbs = exphbs.create({
@@ -34,6 +39,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(session({
+  secret: 'inserte su clave aqui',
+  resave: false,
+  saveUninitialized: true
+}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/promos', promosRouter);
@@ -44,6 +56,44 @@ app.use('/redessociales', redessocialesRouter);
 app.use('/delivery', deliveryRouter);
 app.use('/ingresar', ingresarRouter);
 app.use('/contacto', contactoRouter);
+
+//pool.query('select nombre,trabajo from empleados').then(function (resultados) {
+// console.log(resultados)
+//});
+
+//var id = 29;
+//var obj = {
+  //nombre: 'Pablo',
+  //apellido: 'Gomez'
+//}
+//pool.query('update empleados set ? where id_emp=?', [obj, id]).then(function (resultados){
+  //console.log(resultados);
+//});
+
+app.get('/',function(req, res) {
+  var conocido = Boolean(req.session.nombre);
+
+  res.render('ingresar',{
+    title: 'Sesiones en Express.js',
+    conocido: conocido,
+    nombre: req.session.nombre
+  });
+});
+
+app.post('/ingresar', function (req, res){
+
+  console.log(req.body.nombre)
+  
+  if (req.body.nombre) {
+    req.session.nombre = req.body.nombre
+  }
+  res.redirect('/');
+});
+
+app.get('/ingresar', function (req, res) {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 app.use(function(req, res) {
   next(createError(404));
