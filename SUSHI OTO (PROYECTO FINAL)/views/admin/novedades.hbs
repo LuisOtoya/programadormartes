@@ -1,63 +1,71 @@
 <body style="background:cadetblue">
-<div class="container" style="margin-right: 70px;">
-    <div class="row justify-content-end">
-        <div class="col-4">
-            <p style="margin: 30px;">Hola {{ usuario }} ! <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesion <i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-4">
+                <p style="margin: 30px;">Hola {{ usuario }} ! <a href="/admin/login/logout"
+                        class="btn btn-danger">Cerrar sesion <i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
+            </div>
         </div>
     </div>
-</div> 
-<div class="row">
-    <div class="col-md-3 offset-md-3">
-        <h2>Lista de Novedades</h2>
+    <div class="row">
+        <div class="col-md-3 offset-md-3">
+            <h2>Lista de Novedades</h2>
+        </div>
+        <div class="col-md-3 offset-md-3"> <a href="/admin/novedades/agregar" class="btn btn-success"><i
+                    class="fas fa-plus"></i>Nuevo</a>
+        </div>
     </div>
-    <div class="col-md-3 offset-md-3"> <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each novedades}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td class="text-center">
+                            <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary">
+                                <i class="fa fa-pencil"></i></a>
+                            <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary">
+                                <i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-    
-<div class="row">
-    <div class="col">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col" class="text-center">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each novedades}}
-                <tr>
-                    <th scope="row">{{id}}</th>
-                    <td>{{titulo}}</td>
-                    <td class="text-center">
-                        <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary">
-                        <i class="fa fa-pencil"></i></a>
-                        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary">
-                        <i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
+    <p style="font-size: 25px;">Gracias por registrarte tenes descuentos por ello</p>
+    <div class="image-container">
+        <div class="image-wrapper">
+            <a href="https://wa.me/+5401130377396?text=¡Hola! Me gustaría recibir más información sobre el 30% de descuento en la mejor comida Peruana."
+                target="_blank">
+                <img src="/images/descuentos/199860307_314253933620740_641835171008261245_n.jpg"
+                    alt="Foto de comida peruana" /></a>
+            <p style="color: black;">haz click en la imagen y disfruta de un 30% off en la mejor comida Peruana</p>
+        </div>
+        <div class="image-wrapper">
+            <a href="https://wa.me/+5401130377396?text=¡Hola! Me gustaría recibir más información sobre el 40% off en el total de mi compra en tu reserva anticipada ."
+                target="_blank">
+                <img src="/images/descuentos/salon9.jpg" alt="Foto de salon" /> </a>
+            <p style="color: black;">haz click en la imagen y disfruta de un 40% off en el total de tu compra en tu
+                reserva anticipada (solo en efectivo)</p>
+        </div>
+        <div class="image-wrapper">
+            <a href="https://wa.me/+5401130377396?text=¡Hola! Me gustaría recibir más información sobre el descuento de sushi."
+                target="_blank">
+                <img src="/images/descuentos/Imagen de WhatsApp 2024-03-26 a las 19.04.12_54d050e1.jpg"
+                    alt="foto de sushi"></a>
+            <p style="color: black;">haz click en la imagen y disfruta de un 30% off en el mejor sushi</p>
+        </div>
     </div>
-</div>
-<p style="font-size: 25px;">Gracias por registrarte tenes descuentos por ello</p>
-<div class="image-container">
-    <div class="image-wrapper">
-        <a href="https://wa.me/+5401130377396?text=¡Hola! Me gustaría recibir más información sobre el 30% de descuento en la mejor comida Peruana." target="_blank">
-            <img src="/images/descuentos/199860307_314253933620740_641835171008261245_n.jpg" alt="Foto de comida peruana"/></a>
-        <p style="color: black;">haz click en la imagen y disfruta de un 30% off en la mejor comida Peruana</p>
-    </div>
-    <div class="image-wrapper">
-        <a href="https://wa.me/+5401130377396?text=¡Hola! Me gustaría recibir más información sobre el 40% off en el total de mi compra en tu reserva anticipada ." target="_blank">
-        <img src="/images/descuentos/salon9.jpg" alt="Foto de salon"/> </a>
-        <p style="color: black;">haz click en la imagen y disfruta de un 40% off en el total de tu compra en tu reserva anticipada (solo en efectivo)</p>
-    </div>
-    <div class="image-wrapper">
-        <a href="https://wa.me/+5401130377396?text=¡Hola! Me gustaría recibir más información sobre el descuento de sushi." target="_blank">
-            <img src="/images/descuentos/Imagen de WhatsApp 2024-03-26 a las 19.04.12_54d050e1.jpg" alt="foto de sushi"></a>
-        <p style="color: black;">haz click en la imagen y disfruta de un 30% off en el mejor sushi</p>
-    </div>
-</div>
-        <p style="color: black; text-align:center"> NO ACUMULABLE CON OTRAS PROMOCINES </p>
+    <p style="color: black; text-align:center"> NO ACUMULABLE CON OTRAS PROMOCINES </p>
 </body>

@@ -18,13 +18,14 @@ router.get('/eliminar/:id', async (req, res, next) => {
     const id = req.params.id;
     await novedadesModel.deleteNovedadesById(id);
     res.redirect('/admin/novedades')
-});
+}); 
+//cierre de eliminar
 
 router.get('/agregar', (req, res, next) => {
-    res.render('admin/agregar', {
+    res.render('admin/agregar', { //agregar.hbs
         layout: 'admin/layout'
-    })
-});
+    })//cierra render
+}); //cierra get
 
 router.post('/agregar', async (req, res, next) => {
     try {
@@ -41,12 +42,18 @@ router.post('/agregar', async (req, res, next) => {
     } catch (error) {
         console.log(error)
         res.render('admin/agregar',{
-            layout: 'admin/layaout',
+            layout: 'admin/layout',
             error: true,
             message: 'No se cargo la novedad'
-        })
+        });
     }
-})
+});
+
+async function getNovedadesById(id) {
+    var query = "select *from novedades where id = ? ";
+    var rows = await pool.query(query, [id]);
+    return rows[0];
+}
 
 router.get('/modificar/:id', async (req, res, next) => {
     var id = req.params.id;
@@ -76,8 +83,8 @@ router.post('/modificar', async (req, res, next) => {
         layout: 'admin/layout',
         error: true,
         message: 'No se modifico la novedad' 
-    })
+    });
     }
-})
+});
 
 module.exports = router;
